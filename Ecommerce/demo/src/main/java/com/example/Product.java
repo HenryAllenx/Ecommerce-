@@ -1,5 +1,5 @@
-package demo.src.main.java.com.example;
-
+package com.example;
+import java.util.ArrayList;
 
 public class Product {
     private String name;
@@ -47,8 +47,52 @@ public class Product {
     }
 
     
+    public static ArrayList<Product> listaProducts = new ArrayList<>();
+
+    public static ArrayList<Product> getListaProducts() {
+        return listaProducts;
+    }
+
+    public static void adicionarProduto(Product prod){
+        listaProducts.add(prod);
+    }
+
+
+
+
+
+    public static String listar(){
+        String saida = "";
+
+        for (Product prod: listaProducts){
+            saida += prod.imprimir() + "\n";
+        }
+        return saida;
+    }
+
+    public static boolean remover(String nome){
+        for(Product prod: listaProducts){
+            if(prod.getName() == nome ){
+                listaProducts.remove(prod);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    
     
 
+
+
+
+
+
+
+
+    public String imprimir() {
+        return ("\n Nome do produto: "+name+"\n Preço: "+price+"\n Quantidade: "+amount+"\n Peso: "+weight);
+    }
 
 
 }

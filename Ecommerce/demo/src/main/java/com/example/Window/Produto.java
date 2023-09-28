@@ -86,19 +86,19 @@ public class Produto implements ActionListener{
     
         final JTextField nome = new JTextField("Digite o nome do produto");
             nome.setBounds(10, 10, 200, 30);
-            opcoes.add(nome);
+            opcoes.add(nome.setName());
     
         final JTextField preco = new JTextField("Digite o preço do produto");
             preco.setBounds(10, 50, 200, 30);
-            opcoes.add(preco);
+            opcoes.add(preco.setPrice());
     
         final JTextField quantidade = new JTextField("Digite a quantidade do produto");
             quantidade.setBounds(10, 90, 200, 30);
-            opcoes.add(quantidade);
+            opcoes.add(quantidade.setAmount());
     
         final JTextField peso = new JTextField("Digite o peso do produto");
             peso.setBounds(10, 130, 200, 30);
-            opcoes.add(peso);
+            opcoes.add(peso.setWeight());
     
             JButton confirmar = new JButton("Confirmar");
             confirmar.setBounds(10, 170, 100, 30);

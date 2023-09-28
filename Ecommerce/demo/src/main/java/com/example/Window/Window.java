@@ -14,15 +14,25 @@ public class Window {
     private static void CreateWindow(){
         String[]botao = {"Produto", "clientes","pedidos","fechar"};
 
-        int option = JOptionPane.showOptionDialog(null, "escolha", "gerenciamento de mercado", JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE, null, botao, 0);
+        int option = JOptionPane.showOptionDialog(null,
+         "Escolha",
+          "Gerenciamento de mercado",
+           JOptionPane.DEFAULT_OPTION,
+            JOptionPane.QUESTION_MESSAGE,
+             null,
+              botao,
+               0);
         
         if (option == 0) {
             Produto abrir = new Produto();
             abrir.abrirjanela();
         } else if(option == 1){
+            Clientes clientes = new Clientes();
+            clientes.openClients();
             
         }else if(option == 2){
-
+            Pedidos order = new Pedidos();
+            order.openOrder();
         }else{
             
         }

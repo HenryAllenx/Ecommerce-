@@ -1,7 +1,7 @@
 package com.example.Window;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.tools.DocumentationTool.Location;
@@ -94,15 +94,15 @@ public class Produto implements ActionListener{
     
         final JTextField preco = new JTextField("Digite o preço do produto");
             preco.setBounds(10, 50, 200, 30);
-            opcoes.add(preco.setPrice());
+            opcoes.add(preco);
     
         final JTextField quantidade = new JTextField("Digite a quantidade do produto");
             quantidade.setBounds(10, 90, 200, 30);
-            opcoes.add(quantidade.setAmount());
+            opcoes.add(quantidade);
     
         final JTextField peso = new JTextField("Digite o peso do produto");
             peso.setBounds(10, 130, 200, 30);
-            opcoes.add(peso.setWeight());
+            opcoes.add(peso);
     
             JButton confirmar = new JButton("Confirmar");
             confirmar.setBounds(10, 170, 100, 30);
@@ -111,7 +111,7 @@ public class Produto implements ActionListener{
             confirmar.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e){
-                    
+                    //cu
 
                     opcoes.setVisible(false);
                 }
@@ -152,8 +152,7 @@ public class Produto implements ActionListener{
         }
 
         else if (e.getSource() == voltar) {
-            Window abrir = new Window();
-            Window.CreateWindow();
+            
         }
         
             

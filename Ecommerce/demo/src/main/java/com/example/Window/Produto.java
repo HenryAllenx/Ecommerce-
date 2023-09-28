@@ -3,11 +3,29 @@ package com.example.Window;
 import java.awt.event.ActionListener;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import javax.tools.DocumentationTool.Location;
 
 public class Produto implements ActionListener{
+    
     final JFrame novoFrame = new JFrame("O que deseja fazer?");
-
+    JTable tabela;
+    DefaultTableModel table;
+    String[] colunas = {"Nome", "Quantidade", "Preço", "Peso"};
+    
+    
+    //----------BOTÕES----------//
+    JButton adicionarproduto = new JButton("Adicionar Produto");
+    JButton editarproduto = new JButton("Editar Produto");
+    JButton removerproduto = new JButton("Remover Produto");
+    JButton verproduto = new JButton("Ver Produtos");
+    JButton voltar = new JButton("Menu");
+    
+    
     public void abrirjanela(){
+
+        
+
         novoFrame.setLayout(null);
         novoFrame.setVisible(true);
         novoFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -24,7 +42,10 @@ public class Produto implements ActionListener{
 
         JPanel verprod = new JPanel();
         verprod.setBounds(10, 80, 580, 30);
-        novoFrame.add( verprod);
+        novoFrame.add(verprod);
+
+        
+        
 
         JPanel removprod = new JPanel();
         removprod.setBounds(10, 110, 580, 30);
@@ -34,29 +55,30 @@ public class Produto implements ActionListener{
         back.setBounds(10, 140, 580, 30);
         novoFrame.add(back);
 
-        //--------------botoes propriamente ditos------------------//
-        JButton adicionarproduto = new JButton("Adicionar Produto");
+        //--------------Funções Botões------------------//
         maisprod.add(adicionarproduto);
+        adicionarproduto.addActionListener(this);
 
-        JButton editarproduto = new JButton("Editar Produto");
         editprod.add(editarproduto);
+        editarproduto.addActionListener(this);
 
-        JButton removerproduto = new JButton("Remover Produto");
         removprod.add(removerproduto);
+        removerproduto.addActionListener(this);
 
-        JButton verproduto = new JButton("Ver Produtos");
         verprod.add(verproduto);
+        verproduto.addActionListener(this);
 
 
-        JButton Voltar = new JButton("Voltar para a página inicial");
-        back.add(Voltar);
+        back.add(voltar);
+        voltar.addActionListener(this);
         //----------------------FUNÇÕES---------------------------//
 
     }
 
     @Override
     public void actionPerformed(java.awt.event.ActionEvent e){
-        final JFrame opcoes = new JFrame("Digite os detalhes do produto");
+        if (e.getSource() == adicionarproduto) {
+            final JFrame opcoes = new JFrame("Digite os detalhes do produto");
             opcoes.setLayout(null);
             opcoes.setVisible(true);
             opcoes.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -81,6 +103,43 @@ public class Produto implements ActionListener{
             JButton confirmar = new JButton("Confirmar");
             confirmar.setBounds(10, 170, 100, 30);
             opcoes.add(confirmar);
+        }
+
+        else if (e.getSource() == editarproduto) {
+            
+        }
+
+        else if (e.getSource() == removerproduto) {
+            
+        }
+
+        else if (e.getSource() == verproduto) {
+           final JFrame info = new JFrame();
+           info.setLayout(null);
+           info.setVisible(true);
+           info.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+           info.setSize(600, 400);
+
+            table = new DefaultTableModel();
+            tabela = new JTable();
+            table.addColumn("Nome");
+            table.addColumn("Preço");
+            table.addColumn("Peso");
+            table.addColumn("Quantidade");
+
+            
+            
+            voltar.setBounds(250, 330,80 , 30);
+            info.add(voltar);
+            voltar.addActionListener(this);
+
+
+        }
+
+        else if (e.getSource() == voltar) {
+            
+        }
+        
             
            
                 

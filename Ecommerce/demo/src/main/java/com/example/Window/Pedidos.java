@@ -6,7 +6,11 @@ import javax.swing.*;
 
 public class Pedidos implements ActionListener {
     final JFrame framePedidos = new JFrame("O que desejas fazer");
-
+    JButton adicionarPedidos = new JButton("Fazer pedido");
+    JButton pedidos = new JButton("Ver pedidos");
+    JButton remove = new JButton("Remover pedido");
+    JButton Voltar = new JButton("Voltar para a página inicial");
+    
     public void openOrder(){
         framePedidos.setLayout(null);
         framePedidos.setVisible(true);
@@ -31,31 +35,20 @@ public class Pedidos implements ActionListener {
 
         //------------------------------------//
 
-        JButton adicionarPedidos = new JButton("Fazer pedido");
         addPedidos.add(adicionarPedidos);
 
-        JButton pedidos = new JButton("Ver pedidos");
         verPedidos.add(pedidos);
 
-        JButton remove = new JButton("Remover pedido");
         remover.add(remove);
 
-        JButton Voltar = new JButton("Voltar para a página inicial");
         back.add(Voltar);
 
     }
-    
-
-
-
-
-
-
-
-    @Override
+     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+       if (e.getSource() == adicionarPedidos) {
+        
+       }
     }
     
 }

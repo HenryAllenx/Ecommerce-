@@ -12,6 +12,10 @@ public class Produto implements ActionListener{
     JTable tabela;
     DefaultTableModel table;
     String[] colunas = {"Nome", "Quantidade", "Preço", "Peso"};
+    String name;
+    double preco;
+    int quantidade;
+    double peso;
     
     
     //----------BOTÕES----------//
@@ -87,6 +91,7 @@ public class Produto implements ActionListener{
         final JTextField nome = new JTextField("Digite o nome do produto");
             nome.setBounds(10, 10, 200, 30);
             opcoes.add(nome);
+           
     
         final JTextField preco = new JTextField("Digite o preço do produto");
             preco.setBounds(10, 50, 200, 30);
@@ -103,6 +108,17 @@ public class Produto implements ActionListener{
             JButton confirmar = new JButton("Confirmar");
             confirmar.setBounds(10, 170, 100, 30);
             opcoes.add(confirmar);
+
+            confirmar.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e){
+                    
+
+                    opcoes.setVisible(false);
+                }
+            });
+            
+
         }
 
         else if (e.getSource() == editarproduto) {
@@ -137,7 +153,8 @@ public class Produto implements ActionListener{
         }
 
         else if (e.getSource() == voltar) {
-            
+            Window abrir = new Window();
+            Window.CreateWindow();
         }
         
             
@@ -146,6 +163,8 @@ public class Produto implements ActionListener{
     };
         
 }
+
+
 
  
 

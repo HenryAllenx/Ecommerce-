@@ -11,7 +11,7 @@ import java.awt.event.ActionListener;
 public class Window {
     
 
-    private static void CreateWindow(){
+    public static void CreateWindow(){
         String[]botao = {"Produto", "clientes","pedidos","fechar"};
 
         int option = JOptionPane.showOptionDialog(null,

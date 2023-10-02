@@ -7,6 +7,9 @@ import javax.swing.*;
 
 public class Clientes implements ActionListener {
     final JFrame newFrame = new JFrame("O que desejas fazer?");
+    JButton addcliente = new JButton("Adicionar Cliente: ");
+    JButton verClients = new JButton("Ver Clientes");
+    JButton Voltar = new JButton("Voltar para a pÃ¡gina inicial");
 
     public void openClients(){
         newFrame.setLayout(null);
@@ -28,14 +31,16 @@ public class Clientes implements ActionListener {
  //-------------------------------------------//
 
 
-        JButton addcliente = new JButton("Adicionar Cliente: ");
         adicionarClientes.add(addcliente);
+        addcliente.addActionListener(this);
 
-        JButton verClients = new JButton("Ver Clientes");
         verClientes.add(verClients);
+        
 
-        JButton Voltar = new JButton("Voltar para a página inicial");
         back.add(Voltar);
+        Voltar.addActionListener(this);
+
+
 
 
     }
@@ -43,13 +48,11 @@ public class Clientes implements ActionListener {
 
 
 
-
-
-
-
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(java.awt.event.ActionEvent e) {
+        if (e.getSource() == addcliente) {
         
+        }
        
     }
     

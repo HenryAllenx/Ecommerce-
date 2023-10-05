@@ -19,5 +19,4 @@ Ver
 Remover
 
 Funcionamento:
-
 Usamos um Json para registrar os dados que o usuario digitar, a tela interativa foi feita atraves da biblioteca javax.swing e usamos Mavem para gerenciar as instancias.
